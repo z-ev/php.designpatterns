@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit bootstrap="vendor/autoload.php">
-    <testsuite name="Creational">
-        <directory suffix="AbstractFactoryTest1.php">./tests/Creational/AbstractFactory</directory>
-        <directory suffix="AbstractFactoryTest2.php">./tests/Creational/AbstractFactory</directory>
-        <directory suffix="SingletonTest.php">./tests/Creational/Singleton</directory>
-    </testsuite>
+    <testsuites>
+        <testsuite name="Creational">
+            <directory suffix="AbstractFactoryTest1.php">./tests/Creational/AbstractFactory</directory>
+            <directory suffix="AbstractFactoryTest2.php">./tests/Creational/AbstractFactory</directory>
+            <directory suffix="SingletonTest.php">./tests/Creational/Singleton</directory>
+        </testsuite>
+        <testsuite name="Structural">
+            <directory suffix="AdapterTest.php">./tests/Structural/Adapter</directory>
+        </testsuite>
+    </testsuites>
 </phpunit>
