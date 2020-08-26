@@ -12,8 +12,9 @@
     * [Абстрактная фабрика (Abstract Factory)](#AbstractFactory)
     * [Одиночка (Singleton)](#Singleton)
 * [Структурные шаблоны проектирования (Structural)](#Structural)
-    *[Адаптер (Adapter / Wrapper)](#Adapter)
+    * [Адаптер (Adapter / Wrapper)](#Adapter)
 * [Поведенческие шаблоны проектирования (Behavioral)](#Behavioral)
+    * [Наблюдатель (Observer)](#Observer)
 
 
 ## 1. Порождающие шаблоны проектирования (Creational) <a name="Creational" />
@@ -46,6 +47,7 @@ https://refactoring.guru/ru/design-patterns/abstract-factory/php/example
 ```
 
 ### Одиночка (Singleton) <a name="Singleton" />
+Одиночка — это порождающий паттерн проектирования, который гарантирует, что у класса есть только один экземпляр, и предоставляет к нему глобальную точку доступа.
 
 Это считается анти-паттерном! Для лучшей тестируемости и сопровождения кода используйте Инъекцию Зависимости (Dependency Injection)!
 Назначение
@@ -71,7 +73,7 @@ TEST$ ./vendor/bin/phpunit --filter Structural
 
 Привести нестандартный или неудобный интерфейс какого-то класса в интерфейс, совместимый с вашим кодом. Адаптер позволяет классам работать вместе стандартным образом, что обычно не получается из-за несовместимых интерфейсов, предоставляя для этого прослойку с интерфейсом, удобным для клиентов, самостоятельно используя оригинальный интерфейс.
 
-[Пример 1](/app/Structural/Adapter)
+[Пример 1:](/app/Structural/Adapter)
 
 ```
 TEST$ ./vendor/bin/phpunit --filter test_can_turn_page_on_book ./tests/Structural/Adapter/AdapterTest.php 
@@ -83,3 +85,22 @@ https://designpatternsphp.readthedocs.io/ru/latest/Structural/Adapter/README.htm
 https://refactoring.guru/ru/design-patterns/adapter
 ```
 ## Поведенческие шаблоны проектирования (Behavioral) <a name="Behavioral" />
+```
+TEST$ ./vendor/bin/phpunit --filter Behavioral
+```
+Поведенческие шаблоны проектирования определяют общие закономерности связей между объектами, реализующими данные паттерны. Следование этим шаблонам уменьшает связность системы и облегчает коммуникацию между объектами, что улучшает гибкость программного продукта.
+### Наблюдатель (Observer) <a name="Observer" />
+Наблюдатель — это поведенческий паттерн проектирования, который создаёт механизм подписки, позволяющий одним объектам следить и реагировать на события, происходящие в других объектах.
+
+Для реализации публикации/подписки на поведение объекта, всякий раз, когда объект «Subject» меняет свое состояние, прикрепленные объекты «Observers» будут уведомлены. Паттерн используется, чтобы сократить количество связанных напрямую объектов и вместо этого использует слабую связь (loose coupling).
+
+[Пример 1:](/app/Behavioral/Observer/ex1)
+
+```
+TEST$ ./vendor/bin/phpunit --filter test_change_in_user_leads_to_user_observer_being_notified ./tests/Behavioral/Observer/ObserverTest.php 
+```
+Материалы:
+```
+https://designpatternsphp.readthedocs.io/ru/latest/Behavioral/Observer/README.html
+https://refactoring.guru/ru/design-patterns/observer
+```
