@@ -9,5 +9,8 @@
         <testsuite name="Structural">
             <directory suffix="AdapterTest.php">./tests/Structural/Adapter</directory>
         </testsuite>
+        <testsuite name="Behavioral">
+            <directory suffix="ObserverTest.php">./tests/Behavioral/Observer</directory>
+        </testsuite>
     </testsuites>
 </phpunit>
