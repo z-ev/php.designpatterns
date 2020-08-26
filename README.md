@@ -12,6 +12,7 @@
     * [Абстрактная фабрика (Abstract Factory)](#AbstractFactory)
     * [Одиночка (Singleton)](#Singleton)
 * [Структурные шаблоны проектирования (Structural)](#Structural)
+    *[Адаптер (Adapter / Wrapper)](#Adapter)
 * [Поведенческие шаблоны проектирования (Behavioral)](#Behavioral)
 
 
@@ -61,6 +62,24 @@ TEST$ ./vendor/bin/phpunit --filter test_uniqueness  ./tests/Creational/Singleto
 https://designpatternsphp.readthedocs.io/ru/latest/Creational/Singleton/README.html
 https://refactoring.guru/ru/design-patterns/singleton
 ```
-## Структурные шаблоны проектирования (Structural) <a name="Structural" />
+## 2. Структурные шаблоны проектирования (Structural) <a name="Structural" />
+```
+TEST$ ./vendor/bin/phpunit --filter Structural
+```
+### Адаптер (Adapter / Wrapper) <a name="Adapter" />
+Адаптер — это структурный паттерн проектирования, который позволяет объектам с несовместимыми интерфейсами работать вместе.
 
+Привести нестандартный или неудобный интерфейс какого-то класса в интерфейс, совместимый с вашим кодом. Адаптер позволяет классам работать вместе стандартным образом, что обычно не получается из-за несовместимых интерфейсов, предоставляя для этого прослойку с интерфейсом, удобным для клиентов, самостоятельно используя оригинальный интерфейс.
+
+[Пример 1](/app/Structural/Adapter)
+
+```
+TEST$ ./vendor/bin/phpunit --filter test_can_turn_page_on_book ./tests/Structural/Adapter/AdapterTest.php 
+TEST$ ./vendor/bin/phpunit --filter test_can_turn_page_on_Kindle ./tests/Structural/Adapter/AdapterTest.php 
+```
+Материалы:
+```
+https://designpatternsphp.readthedocs.io/ru/latest/Structural/Adapter/README.html
+https://refactoring.guru/ru/design-patterns/adapter
+```
 ## Поведенческие шаблоны проектирования (Behavioral) <a name="Behavioral" />
