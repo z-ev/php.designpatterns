@@ -9,6 +9,7 @@ use App\Creational\Singleton\Singleton;
 
 class SingletonTest extends TestCase
 {
+
     /**
      * @test
      */
