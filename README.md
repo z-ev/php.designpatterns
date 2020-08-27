@@ -11,6 +11,7 @@
 * [1. Порождающие шаблоны проектирования (Creational)](#Creational)
     * [Абстрактная фабрика (Abstract Factory)](#AbstractFactory)
     * [Одиночка (Singleton)](#Singleton)
+    * [Строитель (Builder)](#Builder)
 * [Структурные шаблоны проектирования (Structural)](#Structural)
     * [Адаптер (Adapter / Wrapper)](#Adapter)
 * [Поведенческие шаблоны проектирования (Behavioral)](#Behavioral)
@@ -64,6 +65,29 @@ TEST$ ./vendor/bin/phpunit --filter test_uniqueness  ./tests/Creational/Singleto
 https://designpatternsphp.readthedocs.io/ru/latest/Creational/Singleton/README.html
 https://refactoring.guru/ru/design-patterns/singleton
 ```
+
+## Строитель (Builder) <a name="Builder" />
+Строитель — это порождающий паттерн проектирования, который позволяет создавать сложные объекты пошагово. Строитель даёт возможность использовать один и тот же код строительства для получения разных представлений объектов.
+
+Строитель — это интерфейс для производства частей сложного объекта.
+
+Иногда, если Строитель лучше знает о том, что он строит, этот интерфейс может быть абстрактным классом с методами по-умолчанию (адаптер).
+
+Если у вас есть сложное дерево наследования для объектов, логично иметь сложное дерево наследования и для их строителей.
+
+Примечание: Строители могут иметь текучий интерфейс, например, строитель макетов в PHPUnit.
+
+```
+TEST$ ./vendor/bin/phpunit --filter test_can_build_truck  ./tests/Creational/Builder/BuilderTest.php 
+TEST$ ./vendor/bin/phpunit --filter test_can_build_car  ./tests/Creational/Builder/BuilderTest.php 
+
+```
+Материалы:
+```
+https://refactoring.guru/ru/design-patterns/builder
+https://designpatternsphp.readthedocs.io/ru/latest/Creational/Builder/README.html
+```
+
 ## 2. Структурные шаблоны проектирования (Structural) <a name="Structural" />
 ```
 TEST$ ./vendor/bin/phpunit --filter Structural
