@@ -4,6 +4,7 @@
         <testsuite name="Creational">
             <directory suffix="AbstractFactoryTest1.php">./tests/Creational/AbstractFactory</directory>
             <directory suffix="AbstractFactoryTest2.php">./tests/Creational/AbstractFactory</directory>
+            <directory suffix="FactoryMethodTest.php">./tests/Creational/FactoryMethod</directory>
             <directory suffix="SingletonTest.php">./tests/Creational/Singleton</directory>
         </testsuite>
         <testsuite name="Structural">

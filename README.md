@@ -10,6 +10,7 @@
 ## Оглавление
 * [1. Порождающие шаблоны проектирования (Creational)](#Creational)
     * [Абстрактная фабрика (Abstract Factory)](#AbstractFactory)
+    * [Фабричный Метод (Factory Method)](#FactoryM)
     * [Одиночка (Singleton)](#Singleton)
     * [Строитель (Builder)](#Builder)
 * [Структурные шаблоны проектирования (Structural)](#Structural)
@@ -46,6 +47,28 @@ TEST$ ./vendor/bin/phpunit --filter test_can_create_products ./tests/Creational/
 https://designpatternsphp.readthedocs.io/ru/latest/Creational/AbstractFactory/README.html
 https://refactoring.guru/ru/design-patterns/abstract-factory/php/example
 ```
+### Фабричный Метод (Factory Method) <a name="FactoryM" />
+Фабричный метод — это порождающий паттерн проектирования, который определяет общий интерфейс для создания объектов в суперклассе, позволяя подклассам изменять тип создаваемых объектов.
+
+Выгодное отличие от SimpleFactory в том, что вы можете вынести реализацию создания объектов в подклассы.
+
+В простых случаях, этот абстрактный класс может быть только интерфейсом.
+
+Этот паттерн является «настоящим» Шаблоном Проектирования, потому что он следует «Принципу инверсии зависимостей» также известному как «D» в S.O.L.I.D.
+
+Это означает, что класс FactoryMethod зависит от абстракций, а не от конкретных классов. Это существенный плюс в сравнении с SimpleFactory или StaticFactory.
+
+[Пример 1](/app/Creational/FactoryMethod/ex1)
+
+```
+TEST$ ./vendor/bin/phpunit --filter test_can_create_StdoutLogging ./tests/Creational/FactoryMethod/FactoryMethodTest.php 
+TEST$ ./vendor/bin/phpunit --filter test_can_create_FileLogging ./tests/Creational/FactoryMethod/FactoryMethodTest.php 
+```
+Материалы:
+```
+https://designpatternsphp.readthedocs.io/ru/latest/Creational/FactoryMethod/README.html
+https://refactoring.guru/ru/design-patterns/factory-method
+```
 
 ### Одиночка (Singleton) <a name="Singleton" />
 Одиночка — это порождающий паттерн проектирования, который гарантирует, что у класса есть только один экземпляр, и предоставляет к нему глобальную точку доступа.
@@ -66,7 +89,7 @@ https://designpatternsphp.readthedocs.io/ru/latest/Creational/Singleton/README.h
 https://refactoring.guru/ru/design-patterns/singleton
 ```
 
-## Строитель (Builder) <a name="Builder" />
+### Строитель (Builder) <a name="Builder" />
 Строитель — это порождающий паттерн проектирования, который позволяет создавать сложные объекты пошагово. Строитель даёт возможность использовать один и тот же код строительства для получения разных представлений объектов.
 
 Строитель — это интерфейс для производства частей сложного объекта.
@@ -80,7 +103,6 @@ https://refactoring.guru/ru/design-patterns/singleton
 ```
 TEST$ ./vendor/bin/phpunit --filter test_can_build_truck  ./tests/Creational/Builder/BuilderTest.php 
 TEST$ ./vendor/bin/phpunit --filter test_can_build_car  ./tests/Creational/Builder/BuilderTest.php 
-
 ```
 Материалы:
 ```
