@@ -11,6 +11,7 @@
 * [1. Порождающие шаблоны проектирования (Creational)](#Creational)
     * [Абстрактная фабрика (Abstract Factory)](#AbstractFactory)
     * [Фабричный Метод (Factory Method)](#FactoryM)
+    * [Статическая Фабрика (Static Factory)](#StaticFactory)
     * [Одиночка (Singleton)](#Singleton)
     * [Строитель (Builder)](#Builder)
 * [Структурные шаблоны проектирования (Structural)](#Structural)
@@ -68,6 +69,21 @@ TEST$ ./vendor/bin/phpunit --filter test_can_create_FileLogging ./tests/Creation
 ```
 https://designpatternsphp.readthedocs.io/ru/latest/Creational/FactoryMethod/README.html
 https://refactoring.guru/ru/design-patterns/factory-method
+```
+### Статическая Фабрика (Static Factory) <a name="StaticFactory" />
+
+Подобно AbstractFactory, этот паттерн используется для создания ряда связанных или зависимых объектов. Разница между этим шаблоном и Абстрактной Фабрикой заключается в том, что Статическая Фабрика использует только один статический метод, чтобы создать все допустимые типы объектов. Этот метод, обычно, называется factory или build.
+
+[Пример 1](/app/Creational/StaticFactory/ex1)
+
+```
+TEST$ ./vendor/bin/phpunit --filter test_can_create_NumberFormatter ./tests/Creational/StaticFactory/StaticFactoryTest.php 
+TEST$ ./vendor/bin/phpunit --filter test_can_create_StringFormatter ./tests/Creational/StaticFactory/StaticFactoryTest.php 
+TEST$ ./vendor/bin/phpunit --filter test_exception ./tests/Creational/StaticFactory/StaticFactoryTest.php 
+```
+Материалы:
+```
+https://designpatternsphp.readthedocs.io/ru/latest/Creational/StaticFactory/README.html
 ```
 
 ### Одиночка (Singleton) <a name="Singleton" />
