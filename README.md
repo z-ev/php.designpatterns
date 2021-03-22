@@ -14,6 +14,7 @@
     * [Статическая Фабрика (Static Factory)](#StaticFactory)
     * [Одиночка (Singleton)](#Singleton)
     * [Строитель (Builder)](#Builder)
+    * [Прототип (Prototype)](#Prototype)
 * [Структурные шаблоны проектирования (Structural)](#Structural)
     * [Адаптер (Adapter / Wrapper)](#Adapter)
 * [Поведенческие шаблоны проектирования (Behavioral)](#Behavioral)
@@ -103,6 +104,23 @@ TEST$ ./vendor/bin/phpunit --filter test_uniqueness  ./tests/Creational/Singleto
 ```
 https://designpatternsphp.readthedocs.io/ru/latest/Creational/Singleton/README.html
 https://refactoring.guru/ru/design-patterns/singleton
+```
+
+### Прототип (Prototype) <a name="Prototype" />
+
+Помогает избежать затрат на создание объектов стандартным способом (new Foo()), а вместо этого создаёт прототип и затем клонирует его.
+
+Пример: Большие объемы данных (например, создать 1000000 строк в базе данных сразу через ORM).
+
+[Пример](/app/Creational/Prototype)
+
+```
+TEST$ ./vendor/bin/phpunit --filter PrototypeTest ./tests/Creational/Prototype/PrototypeTest.php 
+```
+Материалы:
+```
+https://designpatternsphp.readthedocs.io/ru/latest/Creational/Prototype/README.html
+https://en.wikipedia.org/wiki/Prototype_pattern
 ```
 
 ### Строитель (Builder) <a name="Builder" />
